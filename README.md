@@ -19,7 +19,6 @@ This project is a React-based web page for my SD Assignment.
 - `/src` - Source code
 - `/public` - Static files
   
-
 # Author
 
 #### `Md Tayeb Ibne Sayed`
