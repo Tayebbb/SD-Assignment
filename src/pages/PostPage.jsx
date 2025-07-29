@@ -49,9 +49,9 @@ const PostPage = () => {
     <div style={{ padding: '20px', maxWidth: '700px', margin: 'auto', background: '#0a1733', borderRadius: '12px', color: 'white', boxShadow: '0 2px 12px rgba(10,23,51,0.2)' }}>
       <nav style={{ borderBottom: '1px solid #bbb', marginBottom: '12px', paddingBottom: '4px', background: 'transparent' }}>
         <span style={{ color: 'white', fontSize: '15px' }}>
-          <a href="#" style={{ color: 'white', textDecoration: 'underline', marginRight: '8px' }}>Section</a>
+          <Link to="/" style={{ color: 'white', textDecoration: 'underline', marginRight: '8px' }}>Section</Link>
           {'>'}
-          <a href="#" style={{ color: 'white', textDecoration: 'underline', marginLeft: '8px' }}>Sub-section</a>
+          <Link to="/sub-section" style={{ color: 'white', textDecoration: 'underline', marginLeft: '8px' }}>Sub-section</Link>
         </span>
       </nav>
       <h2 style={{ color: '#ffeb3b' }}>Lorem Ipsum Dolor...</h2>
