@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Comment from '../components/Comments';
+import Comment from '../components/comments';
 import Pagination from '../components/pagination';
 import ReactionBar from '../components/Reaction';
 
