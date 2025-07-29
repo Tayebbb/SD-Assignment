@@ -4,24 +4,24 @@ import { useParams } from 'react-router-dom';
 const AuthorProfilePage = () => {
   const { authorId } = useParams();
   const authorNames = {
-    1: 'Alice',
-    2: 'Bob',
-    3: 'Charlie',
-    4: 'Diana',
-    5: 'Eve',
-    6: 'Frank',
-    poster: 'Grace',
+    1: 'Tayeb',
+    2: 'Raisul',
+    3: 'Ashfia',
+    4: 'Ava',
+    5: 'Fahim',
+    6: 'Rakib',
+    poster: 'Kuddus',
   };
   const name = authorNames[authorId] || 'Unknown';
   // Use a unique solid color for each authorId
   const authorColors = {
-    1: '#e57373', // Alice
-    2: '#64b5f6', // Bob
-    3: '#81c784', // Charlie
-    4: '#ffd54f', // Diana
-    5: '#ba68c8', // Eve
-    6: '#ff8a65', // Frank
-    poster: '#90caf9', // Grace
+    1: '#e57373', 
+    2: '#64b5f6', 
+    3: '#81c784',
+    4: '#ffd54f', 
+    5: '#ba68c8', 
+    6: '#ff8a65', 
+    poster: '#90caf9', 
   };
   const profileColor = authorColors[authorId] || '#bdbdbd';
 

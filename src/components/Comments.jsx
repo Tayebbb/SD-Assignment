@@ -26,7 +26,7 @@ const Comment = ({ data }) => {
   );
 }
 
-// Helper to get a unique color for each author
+
 function getProfileColor(authorId) {
   const colors = {
     1: '#e57373',

@@ -7,12 +7,12 @@ import ReactionBar from '../components/Reaction';
 const commentsData = Array.from({ length: 6 }, (_, i) => ({
   id: i + 1,
   author: [
-    'Alice',
-    'Bob',
-    'Charlie',
-    'Diana',
-    'Eve',
-    'Frank'
+    'Tayeb',
+    'Raisul',
+    'Ashfia',
+    'Ava',
+    'Fahim',
+    'Rakib'
   ][i],
   date: [
     '10 February 2025',
@@ -24,12 +24,12 @@ const commentsData = Array.from({ length: 6 }, (_, i) => ({
   ][i],
   authorId: i + 1,
   content: [
-    'This is Alice\'s comment. She loves cats!',
-    'Bob thinks this post is very informative.',
-    'Charlie has a question about the topic.',
-    'Diana enjoyed reading this and learned a lot.',
-    'Eve wants to share her own experience.',
-    'Frank says thanks for the great post!'
+    'I love cats!',
+    'I think this post is very informative.',
+    'I have a question about the topic.',
+    'I enjoyed reading this and learned a lot.',
+    'I want to share my own experience.',
+    'Thanks for the great post!'
   ][i]
 }));
 
@@ -40,7 +40,7 @@ const PostPage = () => {
   const start = (currentPage - 1) * commentsPerPage;
   const currentComments = commentsData.slice(start, start + commentsPerPage);
 
-  const postAuthor = { name: 'Grace', authorId: 'poster', date: '7 January 2025' };
+  const postAuthor = { name: 'Kuddus', authorId: 'poster', date: '7 January 2025' };
   const postAuthorColors = {
     poster: '#90caf9',
   };
