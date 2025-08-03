@@ -4,21 +4,24 @@ import ReactionBar from './Reaction';
 
 const Comment = ({ data }) => {
   return (
-    <div style={{ background: '#102040', border: '1px solid #0a1733', padding: '10px', marginBottom: '10px', borderRadius: '8px', color: 'white', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-      {/* Solid color profile for each author */}
-      <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: getProfileColor(data.authorId), border: '2px solid #ffeb3b', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px', color: 'white', fontWeight: 'bold' }}>
+    <div className="card flex gap-2 transition-all" style={{ alignItems: 'flex-start' }}>
+      <div className="avatar avatar-sm" style={{ background: getProfileColor(data.authorId) }}>
         {data.author[0]}
       </div>
       <div style={{ flex: 1 }}>
-        <strong>
-          <Link to={`/author/${data.authorId}`} style={{ textDecoration: 'none', color: '#ffeb3b' }}>
-            {data.author}
-          </Link>
-        </strong> - <small style={{ color: '#bbdefb' }}>{data.date}</small>
-        <p>{data.content}</p>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '4px' }}>
-          <button style={{ background: 'none', border: 'none', color: '#ffeb3b', cursor: 'pointer', fontWeight: 'bold', fontSize: '14px', padding: 0 }}>Report</button>
-          <button style={{ background: 'none', border: 'none', color: '#bbdefb', cursor: 'pointer', fontWeight: 'bold', fontSize: '14px', padding: 0 }}>Reply</button>
+        <div className="flex flex-wrap gap-1" style={{ alignItems: 'baseline' }}>
+          <strong>
+            <Link to={`/author/${data.authorId}`} className="nav-link text-primary">
+              {data.author}
+            </Link>
+          </strong>
+          <span className="text-muted">-</span>
+          <small className="text-secondary">{data.date}</small>
+        </div>
+        <p style={{ margin: '0.5rem 0' }}>{data.content}</p>
+        <div className="flex gap-3 responsive-margin" style={{ alignItems: 'center' }}>
+          <button className="btn-link text-primary">Report</button>
+          <button className="btn-link text-secondary">Reply</button>
         </div>
         <ReactionBar />
       </div>

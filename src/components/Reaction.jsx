@@ -10,25 +10,29 @@ const reactions = [
 const ReactionBar = () => {
   const [selected, setSelected] = useState(null);
   return (
-    <div style={{ display: 'flex', gap: '10px', marginTop: '10px', background: '#0a1733', padding: '8px', borderRadius: '8px' }}>
+    <div className="responsive-margin bg-dark p-2 flex gap-2 flex-wrap" style={{ borderRadius: '8px' }}>
       {reactions.map((r, index) => (
         <button
           key={index}
+          className="transition-all"
           style={{
-            fontSize: '22px',
-            opacity: selected === index ? 1 : 0.5,
-            transform: selected === index ? 'scale(1.3)' : 'scale(1)',
-            transition: '0.2s',
+            fontSize: 'clamp(18px, 4vw, 22px)',
+            opacity: selected === index ? 1 : 0.6,
+            transform: selected === index ? 'scale(1.2)' : 'scale(1)',
             background: selected === index ? '#ffeb3b' : '#102040',
             color: selected === index ? '#102040' : '#bbdefb',
             border: 'none',
             borderRadius: '50%',
-            width: '40px',
-            height: '40px',
+            width: 'clamp(36px, 8vw, 48px)',
+            height: 'clamp(36px, 8vw, 48px)',
             cursor: 'pointer',
-            boxShadow: selected === index ? '0 0 5px #ffeb3b' : 'none',
+            boxShadow: selected === index ? '0 0 8px #ffeb3b' : 'none',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
           }}
           onClick={() => setSelected(selected === index ? null : index)}
+          title={r.label}
         >
           {r.emoji}
         </button>

@@ -26,13 +26,17 @@ const AuthorProfilePage = () => {
   const profileColor = authorColors[authorId] || '#bdbdbd';
 
   return (
-    <div style={{ padding: '20px', textAlign: 'center', background: '#0a1733', borderRadius: '12px', color: 'white', maxWidth: '500px', margin: '40px auto', boxShadow: '0 2px 12px rgba(10,23,51,0.2)' }}>
-      <div style={{ width: '100px', height: '100px', borderRadius: '50%', background: profileColor, border: '3px solid #ffeb3b', margin: '0 auto 16px auto', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '40px', color: 'white', fontWeight: 'bold' }}>
-        {name[0]}
+    <div className="full-height bg-dark flex flex-center responsive-padding">
+      <div className="container">
+        <div className="card mobile-center fade-in" style={{ maxWidth: '500px', margin: '0 auto' }}>
+          <div className="avatar avatar-lg mx-auto responsive-margin" style={{ background: profileColor }}>
+            {name[0]}
+          </div>
+          <h2 className="text-primary">Author Profile Page</h2>
+          <p className="text-secondary">Author ID: {authorId}</p>
+          <p>Name: <span className="text-primary">{name}</span></p>
+        </div>
       </div>
-      <h2 style={{ color: '#ffeb3b' }}>Author Profile Page</h2>
-      <p style={{ color: '#bbdefb' }}>Author ID: {authorId}</p>
-      <p>Name: <span style={{ color: '#ffeb3b' }}>{name}</span></p>
     </div>
   );
 };

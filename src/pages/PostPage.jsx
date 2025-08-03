@@ -46,50 +46,65 @@ const PostPage = () => {
   };
   const postProfileColor = postAuthorColors[postAuthor.authorId] || '#bdbdbd';
   return (
-    <div style={{ padding: '20px', maxWidth: '700px', margin: 'auto', background: '#0a1733', borderRadius: '12px', color: 'white', boxShadow: '0 2px 12px rgba(10,23,51,0.2)' }}>
-      <nav style={{ borderBottom: '1px solid #bbb', marginBottom: '12px', paddingBottom: '4px', background: 'transparent' }}>
-        <span style={{ color: 'white', fontSize: '15px' }}>
-          <Link to="/" style={{ color: 'white', textDecoration: 'underline', marginRight: '8px' }}>Section</Link>
-          {'>'}
-          <Link to="/sub-section" style={{ color: 'white', textDecoration: 'underline', marginLeft: '8px' }}>Sub-section</Link>
-        </span>
-      </nav>
-      <h2 style={{ color: '#ffeb3b' }}>Lorem Ipsum Dolor...</h2>
-      <p>Lorem Ipsum Dolor content...</p>
+    <div className="full-height bg-dark responsive-padding">
+      <div className="container">
+        <div className="card fade-in">
+          <nav className="nav">
+            <span className="text-white">
+              <Link to="/" className="nav-link">Section</Link>
+              <span className="mx-1">&gt;</span>
+              <Link to="/sub-section" className="nav-link">Sub-section</Link>
+            </span>
+          </nav>
+          
+          <h2 className="text-primary">Lorem Ipsum Dolor...</h2>
+          <p>Lorem Ipsum Dolor content...</p>
 
-      <div style={{ height: '150px', background: '#102040', margin: '20px 0', borderRadius: '8px' }} />
+          <div className="responsive-margin" style={{ 
+            height: 'clamp(120px, 20vw, 200px)', 
+            background: '#7d8eafff', 
+            borderRadius: '8px' 
+          }} />
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
-        <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: postProfileColor, border: '2px solid #ffeb3b', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px', color: 'white', fontWeight: 'bold' }}>
-          {postAuthor.name[0]}
-        </div>
-        <div>
-          <Link to={`/author/${postAuthor.authorId}`} style={{ color: '#ffeb3b', textDecoration: 'underline', fontWeight: 'bold' }}>
-            {postAuthor.name}
-          </Link>
-          <div><small style={{ color: '#bbdefb' }}>{postAuthor.date}</small></div>
+          <div className="flex gap-2 responsive-margin" style={{ alignItems: 'center' }}>
+            <div className="avatar avatar-sm" style={{ background: postProfileColor }}>
+              {postAuthor.name[0]}
+            </div>
+            <div>
+              <Link to={`/author/${postAuthor.authorId}`} className="nav-link text-primary">
+                {postAuthor.name}
+              </Link>
+              <div><small className="text-secondary">{postAuthor.date}</small></div>
+            </div>
+          </div>
+
+          <p>Lorem Ipsum Dolor full post content here...</p>
+
+          <ReactionBar />
+
+          <hr style={{ margin: '1.5rem 0', borderColor: '#bbdefb' }} />
+
+          <h3 className="text-primary">Comments</h3>
+          <input 
+            type="text" 
+            placeholder="Kicchu Bolen....." 
+            className="form-input"
+          />
+          
+          <div className="responsive-margin">
+            {currentComments.map(comment => (
+              <Comment key={comment.id} data={comment} />
+            ))}
+          </div>
+
+          <Pagination
+            total={commentsData.length}
+            perPage={commentsPerPage}
+            currentPage={currentPage}
+            onPageChange={setCurrentPage}
+          />
         </div>
       </div>
-
-      <p>Lorem Ipsum Dolor full post content here...</p>
-
-      <ReactionBar />
-
-      <hr style={{ margin: '20px 0', borderColor: '#bbdefb' }} />
-
-      <h3 style={{ color: '#ffeb3b' }}>Comments</h3>
-      <input type="text" placeholder="Write a comment..." style={{ width: '100%', marginBottom: '10px', borderRadius: '4px', border: '1px solid #bbdefb', padding: '8px', background: '#1a2947', color: '#bbdefb' }} />
-      
-      {currentComments.map(comment => (
-        <Comment key={comment.id} data={comment} />
-      ))}
-
-      <Pagination
-        total={commentsData.length}
-        perPage={commentsPerPage}
-        currentPage={currentPage}
-        onPageChange={setCurrentPage}
-      />
     </div>
   );
 };

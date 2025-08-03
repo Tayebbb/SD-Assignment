@@ -6,13 +6,15 @@ import SectionPage from './pages/SectionPage.jsx';
 
 const App = () => {
   return (
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={<SectionPage />} />
-        <Route path="/sub-section" element={<PostPage />} />
-        <Route path="/author/:authorId" element={<AuthorProfilePage />} />
-      </Routes>
-    </HashRouter>
+    <div className="full-height bg-dark">
+      <HashRouter>
+        <Routes>
+          <Route path="/" element={<SectionPage />} />
+          <Route path="/sub-section" element={<PostPage />} />
+          <Route path="/author/:authorId" element={<AuthorProfilePage />} />
+        </Routes>
+      </HashRouter>
+    </div>
   );
 };
 
